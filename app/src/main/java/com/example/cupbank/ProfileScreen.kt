@@ -87,7 +87,7 @@ fun ProfileScreen() {
 
                 ProfileMenuButton(  
                     title = "Dados Pessoais",  
-                    symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸",  
+                    symbol = "♟",  
                     onClick = {  
                         Toast.makeText(  
                             context,  
@@ -100,12 +100,12 @@ fun ProfileScreen() {
                 Spacer(modifier = Modifier.height(12.dp))
 
                 ProfileMenuButton(  
-                    title = "CartÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âµes",  
-                    symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£",  
+                    title = "Cartões",  
+                    symbol = "▣",  
                     onClick = {  
                     Toast.makeText(  
                         context,  
-                        "CartÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âµes selecionados.",  
+                        "Cartões selecionados.",  
                         Toast.LENGTH_SHORT  
                         ).show()  
                     }  
@@ -117,7 +117,7 @@ fun ProfileScreen() {
                     onProfileClick = {  
                     Toast.makeText(  
                         context,  
-                        "VocÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âª jÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ estÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ na tela de Perfil.",  
+                        "Você já está na tela de Perfil.",  
                         Toast.LENGTH_SHORT  
                         ).show()  
                     }  
@@ -186,7 +186,7 @@ fun ProfileHeader(
         horizontalArrangement = Arrangement.Center  
     ) {  
         Text(  
-            text = if (contaVerificada) "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“" else "!",  
+            text = if (contaVerificada) "✓" else "!",  
             color = Color(0xFF32D583),  
             fontSize = 13.sp,  
             fontWeight = FontWeight.Bold  
@@ -194,9 +194,9 @@ fun ProfileHeader(
   
         Text(  
             text = if (contaVerificada) {  
-                "  Conta verificada"  
+                "Conta verificada"  
             } else {  
-                "  Conta nÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o verificada"  
+                "Conta não verificada"  
             },  
             color = Color(0xFF32D583),  
             fontSize = 12.sp,  
@@ -231,7 +231,7 @@ fun BankInformationCard() {
             verticalAlignment = Alignment.CenterVertically  
         ) {  
             BankInfoItem(  
-                title = "AgÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âªncia",  
+                title = "Agência",  
                 value = "0001"  
             )  
   
@@ -321,7 +321,7 @@ fun ProfileMenuButton(
             )  
   
             Text(  
-                text = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº",  
+                text = "›",  
                 color = CupBankTextSecondary,  
                 fontSize = 24.sp  
             )  
@@ -349,14 +349,14 @@ fun ProfileBottomNavigation(
         verticalAlignment = Alignment.CenterVertically  
     ) {  
         NavigationItem(  
-            symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡",  
-            label = "InÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­cio",  
+            symbol = "⌂",  
+            label = "Início",  
             selected = false,  
             onClick = { }  
         )  
   
         NavigationItem(  
-            symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¤",  
+            symbol = "▤",  
             label = "Extrato",  
             selected = false,  
             onClick = { }  
@@ -370,7 +370,7 @@ fun ProfileBottomNavigation(
         )  
   
         NavigationItem(  
-            symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢",  
+            symbol = "♙",  
             label = "Perfil",  
             selected = true,  
             onClick = onProfileClick  
