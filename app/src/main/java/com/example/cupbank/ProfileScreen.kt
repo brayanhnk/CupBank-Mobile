@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column  
 import androidx.compose.foundation.layout.Row  
 import androidx.compose.foundation.layout.Spacer  
-import androidx.compose.foundation.layout.fillMaxSize  
 import androidx.compose.foundation.layout.fillMaxWidth  
 import androidx.compose.foundation.layout.height  
 import androidx.compose.foundation.layout.padding  
@@ -33,7 +32,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign  
 import androidx.compose.ui.unit.dp  
 import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.layout.weight
 
 
 // Paleta de cores usada em toda a tela (tema dark do CupBank)
@@ -58,14 +56,14 @@ fun ProfileScreen() {
     Scaffold(  
         containerColor = CupBankBackground  
     ) { innerPadding ->  
-        Box(  
-            modifier = Modifier  
-                .fillMaxSize()  
-                .padding(innerPadding)  
-                .padding(horizontal = 20.dp)  
-        ) {  
-            Column(  
-                modifier = Modifier.fillMaxSize(),  
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(innerPadding)
+                .padding(horizontal = 20.dp)
+        ) {
+            Column(
+                modifier = Modifier.fillMaxWidth(),  
                 horizontalAlignment = Alignment.CenterHorizontally  
             ) {  
                 ProfileHeader(
@@ -104,21 +102,23 @@ fun ProfileScreen() {
                     }  
                 )
 
-                Spacer(modifier = Modifier.weight(1f))
+                }  
 
-                ProfileBottomNavigation(  
-                    onProfileClick = {  
-                    Toast.makeText(  
-                        context,  
-                        "Você já está na tela de Perfil.",  
-                        Toast.LENGTH_SHORT  
-                        ).show()  
-                    }  
-                )
+            ProfileBottomNavigation(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(horizontal = 20.dp),
+                onProfileClick = {
+                    Toast.makeText(
+                        context,
+                        "Você já está na tela de Perfil.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            )
 
-            }  
-        }  
-    }  
+        }
+    }
 }
 
 
@@ -303,16 +303,17 @@ fun ProfileMenuButton(
 }
 
 
-@Composable  
-fun ProfileBottomNavigation(  
-    onProfileClick: () -> Unit  
+@Composable
+fun ProfileBottomNavigation(
+    modifier: Modifier = Modifier,
+    onProfileClick: () -> Unit
 ) {  
-    Row(  
-        modifier = Modifier  
-            .fillMaxWidth()  
-            .padding(top = 28.dp, bottom = 16.dp),  
-        horizontalArrangement = Arrangement.SpaceAround,  
-        verticalAlignment = Alignment.CenterVertically  
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(top = 28.dp, bottom = 16.dp),
+        horizontalArrangement = Arrangement.SpaceAround,
+        verticalAlignment = Alignment.CenterVertically
     ) {  
         NavigationItem(  
             symbol = "⌂",  
