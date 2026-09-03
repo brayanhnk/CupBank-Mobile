@@ -47,13 +47,6 @@ val CupBankTextSecondary = Color(0xFF9BA3B5)
 val CupBankField = Color(0xFF202A3E)
 
 
-// ---------------------------------------------------------------------
-//  ProfileScreen
-// ---------------------------------------------------------------------
-//  Tela principal de Perfil. Reune o cabecalho do usuario, o cartao
-//  com os dados bancarios, dois botoes de menu e a barra de navegacao
-//  inferior. Cada acao de menu exibe um Toast como feedback.
-// ---------------------------------------------------------------------
 @Composable  
 fun ProfileScreen() {  
     val context = LocalContext.current  
@@ -129,12 +122,6 @@ fun ProfileScreen() {
 }
 
 
-// ---------------------------------------------------------------------
-//  ProfileHeader
-// ---------------------------------------------------------------------
-//  Avatar circular com a inicial do usuario, nome, e-mail e um selo
-//  que indica se a conta foi verificada (controlado por contaVerificada).
-// ---------------------------------------------------------------------
 @Composable  
 fun ProfileHeader(  
     nome: String,  
@@ -206,12 +193,6 @@ fun ProfileHeader(
 }
 
 
-// ---------------------------------------------------------------------
-//  BankInformationCard
-// ---------------------------------------------------------------------
-//  Card que exibe, lado a lado, os tres dados bancarios do usuario:
-//  Agencia, Conta e Tipo de conta.
-// ---------------------------------------------------------------------
 @Composable  
 fun BankInformationCard() {  
     Card(  
@@ -249,8 +230,6 @@ fun BankInformationCard() {
 }
 
 
-// Item individual do BankInformationCard: um titulo pequeno acima
-// e o valor correspondente em destaque abaixo.
 @Composable  
 fun BankInfoItem(  
     title: String,  
@@ -277,12 +256,6 @@ fun BankInfoItem(
 }
 
 
-// ---------------------------------------------------------------------
-//  ProfileMenuButton
-// ---------------------------------------------------------------------
-//  Botao generico de opcao do menu (ex.: "Dados Pessoais", "Cartoes").
-//  Renderiza: icone a esquerda, titulo no centro e chevron a direita.
-// ---------------------------------------------------------------------
 @Composable  
 fun ProfileMenuButton(  
     title: String,  
@@ -330,13 +303,6 @@ fun ProfileMenuButton(
 }
 
 
-// ---------------------------------------------------------------------
-//  ProfileBottomNavigation
-// ---------------------------------------------------------------------
-//  Barra inferior com 4 itens: Inicio, Extrato, botao central "+" e
-//  Perfil. Apenas o botao de Perfil tem onClick tratado; os demais
-//  ainda sao placeholders.
-// ---------------------------------------------------------------------
 @Composable  
 fun ProfileBottomNavigation(  
     onProfileClick: () -> Unit  
@@ -379,9 +345,6 @@ fun ProfileBottomNavigation(
 }
 
 
-// Item generico da barra de navegacao inferior. Quando nao tem label,
-// funciona como botao quadrado de acao (ex.: o "+" central) e recebe
-// o destaque da cor roxa quando selecionado.
 @Composable
 fun NavigationItem(
     symbol: String,
