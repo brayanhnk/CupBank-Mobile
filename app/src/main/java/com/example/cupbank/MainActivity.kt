@@ -26,7 +26,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// Cores usadas na tela (baseado no print)
 val corFundo = Color(0xFF0E0E1A)
 val corCampo = Color(0xFF1C1C2E)
 val corRoxo = Color(0xFF6C4CE0)
@@ -35,7 +34,6 @@ val corTextoCinza = Color(0xFF9A9AAE)
 @Composable
 fun TelaTransferenciaPix() {
 
-    // Estados da tela (remember + mutableStateOf, visto na Aula 5/6)
     var abaSelecionada by remember { mutableStateOf("Chave PIX") }
     var chavePix by remember { mutableStateOf("") }
     var valor by remember { mutableStateOf("") }
@@ -48,7 +46,6 @@ fun TelaTransferenciaPix() {
             .padding(20.dp)
     ) {
 
-        // Barra superior (voltar + título)
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(top = 20.dp, bottom = 20.dp)
@@ -67,7 +64,6 @@ fun TelaTransferenciaPix() {
             )
         }
 
-        // Alternador Chave PIX / Contato (agora usando Button + onClick)
         Row(modifier = Modifier.fillMaxWidth()) {
             Button(
                 onClick = { abaSelecionada = "Chave PIX" },
@@ -90,7 +86,6 @@ fun TelaTransferenciaPix() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Campo Chave PIX
         Text(text = "CHAVE PIX", color = corTextoCinza, fontSize = 12.sp)
         Spacer(modifier = Modifier.height(6.dp))
         TextField(
@@ -112,7 +107,6 @@ fun TelaTransferenciaPix() {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Campo Valor
         Text(text = "VALOR", color = corTextoCinza, fontSize = 12.sp)
         Spacer(modifier = Modifier.height(6.dp))
         TextField(
@@ -134,7 +128,6 @@ fun TelaTransferenciaPix() {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Campo Descrição
         Text(text = "DESCRIÇÃO (OPCIONAL)", color = corTextoCinza, fontSize = 12.sp)
         Spacer(modifier = Modifier.height(6.dp))
         TextField(
@@ -156,7 +149,6 @@ fun TelaTransferenciaPix() {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        // Botão Continuar (onClick, visto na Aula 3/5)
         Button(
             onClick = {
                 println("Chave: $chavePix | Valor: $valor | Descrição: $descricao")
@@ -172,7 +164,6 @@ fun TelaTransferenciaPix() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Barra inferior simples (só texto)
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
