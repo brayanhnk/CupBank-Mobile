@@ -1,5 +1,4 @@
 package com.example.cupbank
-
   
 import android.widget.Toast  
 import androidx.compose.foundation.background  
@@ -37,6 +36,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.weight
 
 
+// Paleta de cores usada em toda a tela (tema dark do CupBank)
+
 val CupBankBackground = Color(0xFF0B1020)  
 val CupBankSurface = Color(0xFF151C2D)  
 val CupBankPurple = Color(0xFF6D3BFF)  
@@ -46,6 +47,13 @@ val CupBankTextSecondary = Color(0xFF9BA3B5)
 val CupBankField = Color(0xFF202A3E)
 
 
+// ---------------------------------------------------------------------
+//  ProfileScreen
+// ---------------------------------------------------------------------
+//  Tela principal de Perfil. Reune o cabecalho do usuario, o cartao
+//  com os dados bancarios, dois botoes de menu e a barra de navegacao
+//  inferior. Cada acao de menu exibe um Toast como feedback.
+// ---------------------------------------------------------------------
 @Composable  
 fun ProfileScreen() {  
     val context = LocalContext.current  
@@ -79,7 +87,7 @@ fun ProfileScreen() {
 
                 ProfileMenuButton(  
                     title = "Dados Pessoais",  
-                    symbol = "â™Ÿ",  
+                    symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¸",  
                     onClick = {  
                         Toast.makeText(  
                             context,  
@@ -92,12 +100,12 @@ fun ProfileScreen() {
                 Spacer(modifier = Modifier.height(12.dp))
 
                 ProfileMenuButton(  
-                    title = "CartÃµes",  
-                    symbol = "â–£",  
+                    title = "CartÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âµes",  
+                    symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£",  
                     onClick = {  
                     Toast.makeText(  
                         context,  
-                        "CartÃµes selecionados.",  
+                        "CartÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âµes selecionados.",  
                         Toast.LENGTH_SHORT  
                         ).show()  
                     }  
@@ -109,7 +117,7 @@ fun ProfileScreen() {
                     onProfileClick = {  
                     Toast.makeText(  
                         context,  
-                        "VocÃª jÃ¡ estÃ¡ na tela de Perfil.",  
+                        "VocÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âª jÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ estÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ na tela de Perfil.",  
                         Toast.LENGTH_SHORT  
                         ).show()  
                     }  
@@ -121,6 +129,12 @@ fun ProfileScreen() {
 }
 
 
+// ---------------------------------------------------------------------
+//  ProfileHeader
+// ---------------------------------------------------------------------
+//  Avatar circular com a inicial do usuario, nome, e-mail e um selo
+//  que indica se a conta foi verificada (controlado por contaVerificada).
+// ---------------------------------------------------------------------
 @Composable  
 fun ProfileHeader(  
     nome: String,  
@@ -172,7 +186,7 @@ fun ProfileHeader(
         horizontalArrangement = Arrangement.Center  
     ) {  
         Text(  
-            text = if (contaVerificada) "âœ“" else "!",  
+            text = if (contaVerificada) "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“" else "!",  
             color = Color(0xFF32D583),  
             fontSize = 13.sp,  
             fontWeight = FontWeight.Bold  
@@ -182,7 +196,7 @@ fun ProfileHeader(
             text = if (contaVerificada) {  
                 "  Conta verificada"  
             } else {  
-                "  Conta nÃ£o verificada"  
+                "  Conta nÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â£o verificada"  
             },  
             color = Color(0xFF32D583),  
             fontSize = 12.sp,  
@@ -192,6 +206,12 @@ fun ProfileHeader(
 }
 
 
+// ---------------------------------------------------------------------
+//  BankInformationCard
+// ---------------------------------------------------------------------
+//  Card que exibe, lado a lado, os tres dados bancarios do usuario:
+//  Agencia, Conta e Tipo de conta.
+// ---------------------------------------------------------------------
 @Composable  
 fun BankInformationCard() {  
     Card(  
@@ -211,7 +231,7 @@ fun BankInformationCard() {
             verticalAlignment = Alignment.CenterVertically  
         ) {  
             BankInfoItem(  
-                title = "AgÃªncia",  
+                title = "AgÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âªncia",  
                 value = "0001"  
             )  
   
@@ -229,6 +249,8 @@ fun BankInformationCard() {
 }
 
 
+// Item individual do BankInformationCard: um titulo pequeno acima
+// e o valor correspondente em destaque abaixo.
 @Composable  
 fun BankInfoItem(  
     title: String,  
@@ -255,6 +277,12 @@ fun BankInfoItem(
 }
 
 
+// ---------------------------------------------------------------------
+//  ProfileMenuButton
+// ---------------------------------------------------------------------
+//  Botao generico de opcao do menu (ex.: "Dados Pessoais", "Cartoes").
+//  Renderiza: icone a esquerda, titulo no centro e chevron a direita.
+// ---------------------------------------------------------------------
 @Composable  
 fun ProfileMenuButton(  
     title: String,  
@@ -293,7 +321,7 @@ fun ProfileMenuButton(
             )  
   
             Text(  
-                text = "â€º",  
+                text = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âº",  
                 color = CupBankTextSecondary,  
                 fontSize = 24.sp  
             )  
@@ -302,6 +330,13 @@ fun ProfileMenuButton(
 }
 
 
+// ---------------------------------------------------------------------
+//  ProfileBottomNavigation
+// ---------------------------------------------------------------------
+//  Barra inferior com 4 itens: Inicio, Extrato, botao central "+" e
+//  Perfil. Apenas o botao de Perfil tem onClick tratado; os demais
+//  ainda sao placeholders.
+// ---------------------------------------------------------------------
 @Composable  
 fun ProfileBottomNavigation(  
     onProfileClick: () -> Unit  
@@ -314,14 +349,14 @@ fun ProfileBottomNavigation(
         verticalAlignment = Alignment.CenterVertically  
     ) {  
         NavigationItem(  
-            symbol = "âŒ‚",  
-            label = "InÃ­cio",  
+            symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡",  
+            label = "InÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­cio",  
             selected = false,  
             onClick = { }  
         )  
   
         NavigationItem(  
-            symbol = "â–¤",  
+            symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¤",  
             label = "Extrato",  
             selected = false,  
             onClick = { }  
@@ -335,7 +370,7 @@ fun ProfileBottomNavigation(
         )  
   
         NavigationItem(  
-            symbol = "â™™",  
+            symbol = "ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢",  
             label = "Perfil",  
             selected = true,  
             onClick = onProfileClick  
@@ -344,6 +379,9 @@ fun ProfileBottomNavigation(
 }
 
 
+// Item generico da barra de navegacao inferior. Quando nao tem label,
+// funciona como botao quadrado de acao (ex.: o "+" central) e recebe
+// o destaque da cor roxa quando selecionado.
 @Composable
 fun NavigationItem(
     symbol: String,
