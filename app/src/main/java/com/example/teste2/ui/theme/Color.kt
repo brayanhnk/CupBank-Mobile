@@ -1,4 +1,4 @@
-package com.example.cupbank.ui.theme
+package com.example.teste2.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

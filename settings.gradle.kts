@@ -22,5 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CupBank"
+rootProject.name = "Teste2"
 include(":app")
+ 

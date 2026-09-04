@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cupbank"
+    namespace = "com.example.teste2"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.cupbank"
+        applicationId = "com.example.teste2"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
